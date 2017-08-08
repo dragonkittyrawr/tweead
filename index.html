@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Go On A Rant</title>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bubbler+One" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/jquery.quickflip.source.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <!-- This is the code for the flip to recoginize that this flips -->
+    <div class="quickFlip">
+        <!-- first side of the card -->
+        <div id="centerStyle">
+            <form id="rantGet" autocomplete="false">
+                <fieldset>
+                    <legend>Paste Your Text Here:</legend>
+                    <hr>
+                    <textarea name="rant" rows="30" cols="30" id="rantRaw">Brace yourselves fam, this is a long one...</textarea>
+                </fieldset>
+                <!-- the class "first quickFlipCta" means that clicking on this will trigger the flip -->
+                <input class="first quickFlipCta" type="submit" value="Parse" id="rantSubmit">
+                <input type="reset">
+            </form>
+        </div>
+        <!-- second side of the card -->
+        <div id="style2">
+            <h3>Copy Pasta</h3>
+            <div id="parsedTweets"></div>
+            <!-- the class "first quickFlipCta" means that clicking on this will trigger the flip -->
+            <input class="first quickFlipCta" type="submit" value="Go Back">
+        </div>
+        <!-- div that closes the flip area -->
+    </div>
+    <script type="text/javascript">
+    $(function() {
+        $('.quickFlip').quickFlip();
+
+        // GET RANT
+
+        $("#rantSubmit").on("click", function(event) {
+            // PREVENT PAGE REFRESH
+            event.preventDefault();
+
+            // CREATE rantRaw
+            rantRaw = $("#rantRaw").val();
+            console.log("rantRaw: " + rantRaw);
+
+            // CREATE rantParse
+            rantParse = rantRaw.split(" ");
+            console.log("rantParse: " + rantParse);
+
+            // CREATE rantCharCount
+            rantCharCount = rantRaw.split("");
+            console.log("rantCharCount: " + rantCharCount.length);
+
+            twitter.tweetParser(rantRaw, rantParse, rantCharCount);
+        });
+    });
+    </script>
+</body>
+
+</html>

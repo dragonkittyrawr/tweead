@@ -1,0 +1,89 @@
+body {
+    /*background: url(../images/footer.png) no-repeat center center fixed;
+    background-size: cover;*/
+    height: 100%;
+    font-family: 'Bubbler One', serif;
+    font-size: 30px;
+}
+
+fieldset {
+    border: none;
+    overflow: auto;
+}
+
+input {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom-width: 3px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #E48681;
+    border-color: rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    color: #FFF;
+}
+
+input:hover {
+    background-color: #DA4F49;
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+input:active {
+    background-color: #B32C24;
+    border-color: rgba(0, 0, 0, 0.9);
+}
+
+.quickFlip {
+    width: 500px;
+    margin-left: 400px;
+}
+
+#centerStyle {
+    border: 1px ridge lightgrey;
+    margin-top: 50px;
+    text-align: center;
+    width: 500px;
+    margin-left: 40%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+}
+
+#style2 {
+    border: 1px ridge lightgrey;
+    margin-top: 50px;
+    text-align: center;
+    width: 500px;
+    height: auto;
+    margin-left: auto;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: auto;
+}
+
+#tweet {
+    border: 1px ridge lightgrey;
+    /*text-align: center;*/
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    overflow: auto;
+}
+
+#rantRaw {
+    margin: 0px;
+    padding: 10px;
+    height: 280px;
+    width: 350px;
+    overflow: auto;
+}
+
+#parsedTweets {
+    overflow: auto;
+}
