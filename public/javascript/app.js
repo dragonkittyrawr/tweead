@@ -14,6 +14,7 @@ var twitter = {
         this.rantParse = rantParse;
         this.rantCharCount = rantCharCount;
         this.rantRaw = rantRaw;
+        this.count = 1;
 
         // DETERMINE number of tweets
 
@@ -62,6 +63,8 @@ var twitter = {
         this.charCount += window["tweet" + tweets][0].length;
         console.log(window["tweet" + tweets]);
         console.log(this.charCount);
+        console.log("this.count " + this.count);
+        console.log(window["tweet" + this.count]);
 
         // BUILD tweets
 
