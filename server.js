@@ -26,7 +26,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // We need to use sessions to keep track of our user's login status
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(session({ secret: "keyboard cat was an inside job", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 

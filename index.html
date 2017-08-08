@@ -4,12 +4,12 @@
 <head>
     <title>Go On A Rant</title>
     <meta charset="utf-8">
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Bubbler+One" rel="stylesheet">
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script type="text/javascript" src="../javascript/app.js"></script>
-    <script type="text/javascript" src="../javascript/jquery.quickflip.source.js"></script>
+    <script type="text/javascript" src="./javascript/app.js"></script>
+    <script type="text/javascript" src="./javascript/jquery.quickflip.source.js"></script>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
             <h3>Copy Pasta</h3>
             <div id="parsedTweets"></div>
             <!-- the class "first quickFlipCta" means that clicking on this will trigger the flip -->
-            <input class="first quickFlipCta" type="submit" value="Go Back">
+            <input class="first quickFlipCta" type="submit" value="Go Back" id="goBack">
         </div>
         <!-- div that closes the flip area -->
     </div>
@@ -49,17 +49,39 @@
 
             // CREATE rantRaw
             rantRaw = $("#rantRaw").val();
-            console.log("rantRaw: " + rantRaw);
 
             // CREATE rantParse
             rantParse = rantRaw.split(" ");
-            console.log("rantParse: " + rantParse);
 
             // CREATE rantCharCount
             rantCharCount = rantRaw.split("");
-            console.log("rantCharCount: " + rantCharCount.length);
+
+            console.log("browser ===========================================");
+            console.log("rantRaw: " + rantRaw);
+            console.log("rantParse: " + rantParse);
+            console.log("rantCharCount length: " + rantCharCount.length);
+            console.log("========================================================");
 
             twitter.tweetParser(rantRaw, rantParse, rantCharCount);
+        });
+
+        $("#goBack").on("click", function(event) {
+
+            event.preventDefault();
+
+            $("#parsedTweets").empty();
+
+            rantRaw = "";
+            rantParse = [];
+            rantCharCount = [];
+
+            console.log("goBack ===========================================");
+            console.log("rantRaw: " + rantRaw);
+            console.log("rantParse: " + rantParse);
+            console.log("rantCharCount length: " + rantCharCount.length);
+            console.log("========================================================");
+
+
         });
     });
     </script>
