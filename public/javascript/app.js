@@ -96,7 +96,28 @@ var twitter = {
 
         // RETURN tweets
 
-        $("#parsedTweets").append("<div id=\"tweet" + this.count + "\" class=\"tweet\">" + window["tweet" + this.count].join(" ") + "</div>");
+        $("#parsedTweets").append("<div class=\"tweet\"><textarea id=\"tweet" + this.count + "\" rows=\"5\" cols=\"60\">" + window["tweet" + this.count].join(" ") + "</textarea><button type=\"button\" class=\"copyBtn\" data-clipboard-target=\"#tweet" + this.count + "\">Copy</button></div>");
+
+        // $("#parsedTweets:last-child").on("click", function(event) {
+
+        var btns = document.querySelectorAll("button.copyBtn");
+        var clipboard = new Clipboard(btns);
+
+        // console.log("click");
+
+        clipboard.on('success', function(e) {
+            console.info('Action:', e.action);
+            console.info('Text:', e.text);
+            console.info('Trigger:', e.trigger);
+
+            e.clearSelection();
+        });
+
+        clipboard.on('error', function(e) {
+            console.error('Action:', e.action);
+            console.error('Trigger:', e.trigger);
+        });
+        // });
 
         this.count++;
         this.charCount = 0;

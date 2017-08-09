@@ -33,12 +33,15 @@
             <h3>Copy Pasta</h3>
             <div id="parsedTweets"></div>
             <!-- the class "first quickFlipCta" means that clicking on this will trigger the flip -->
-            <input class="first quickFlipCta" type="submit" value="Go Back" id="goBack">
+            <input class="first quickFlipCta" type="button" value="Go Back" id="goBack">
         </div>
         <!-- div that closes the flip area -->
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
     <script type="text/javascript">
+
     $(function() {
+
         $('.quickFlip').quickFlip();
 
         // GET RANT
@@ -67,8 +70,6 @@
 
         $("#goBack").on("click", function(event) {
 
-            event.preventDefault();
-
             $("#parsedTweets").empty();
 
             rantRaw = "";
@@ -80,8 +81,6 @@
             console.log("rantParse: " + rantParse);
             console.log("rantCharCount length: " + rantCharCount.length);
             console.log("========================================================");
-
-
         });
     });
     </script>
