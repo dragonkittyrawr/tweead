@@ -39,6 +39,11 @@ input:active {
     border-color: rgba(0, 0, 0, 0.9);
 }
 
+footer {
+    position: absolute;
+    top: 100%;
+}
+
 .quickFlip {
     width: 500px;
     margin-left: 400px;

@@ -4,16 +4,21 @@
 <head>
     <title>Go On A Rant</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="public/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Bubbler+One" rel="stylesheet">
+    <meta name="description" content="Tweead = tweet + thread.  Type out your thread without worrying about character limits or tracking which tweet you're on.  Tweead parses your text into the correct number of tweets for you to send.  Never leave your followers wondering how long your thread is, they'll know from the first tweet.">
+    <meta name="keywords" content="tweet, twitter, tweets, thread, parse, rant, subtweet, retweet">
+    <meta name="author" content="Erin Stewart">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script type="text/javascript" src="public/javascript/app.js"></script>
-    <script type="text/javascript" src="public/javascript/jquery.quickflip.source.js"></script>
+    <script type="text/javascript" src="./javascript/app.js"></script>
+    <script type="text/javascript" src="./javascript/jquery.quickflip.source.js"></script>
 </head>
 
 <body>
-    <!-- This is the code for the flip to recoginize that this flips -->
+    <!-- This is the code for the flip to recognize that this flips -->
     <div class="quickFlip">
         <!-- first side of the card -->
         <div id="centerStyle">
@@ -37,9 +42,9 @@
         </div>
         <!-- div that closes the flip area -->
     </div>
+    <footer><p>&copy; Erin Stewart</p></footer>
     <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
     <script type="text/javascript">
-
     $(function() {
 
         $('.quickFlip').quickFlip();
