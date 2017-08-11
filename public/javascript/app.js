@@ -96,7 +96,7 @@ var twitter = {
 
         // RETURN tweets
 
-        $("#parsedTweets").append("<div class=\"tweet\"><textarea id=\"tweet" + this.count + "\" rows=\"5\" cols=\"60\">" + window["tweet" + this.count].join(" ") + "</textarea><button type=\"button\" class=\"copyBtn\" data-clipboard-target=\"#tweet" + this.count + "\">Copy</button></div>");
+        $("#parsedTweets").append("<legend>Tweet " + this.count + "</legend><div class=\"tweet\"><textarea id=\"tweet" + this.count + "\" rows=\"5\" cols=\"60\">" + window["tweet" + this.count].join(" ") + "</textarea><button type=\"button\" class=\"copyBtn\" data-clipboard-target=\"#tweet" + this.count + "\"><i class=\"fa fa-clipboard\" aria-hidden=\"true\"></i> Copy</button></div>");
 
         // $("#parsedTweets:last-child").on("click", function(event) {
 

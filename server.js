@@ -2,7 +2,6 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
-var exphbs = require("express-handlebars");
 var methodOverride = require("method-override");
 var session = require("express-session");
 var passport = require("./assets/config/passport");
@@ -16,8 +15,6 @@ var http = require("http").Server(app);
 var app = express();
 
 app.use(methodOverride("_method"));
-// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-// app.set("view engine", "handlebars");
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
@@ -32,15 +29,12 @@ app.use(passport.session());
 
 app.set('view engine', 'html');
 
-
-app.use(express.static(path.join(__dirname, 'public')));
-
 // Static directory
-// app.use(express.static(process.cwd() + "/public"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 // =============================================================
-var routes = require("./assets/controllers/movies_controller.js");
+var routes = require("./assets/controllers/controller.js");
 
 app.use("/", routes);
 

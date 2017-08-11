@@ -8,46 +8,69 @@
     <meta name="keywords" content="tweet, twitter, tweets, thread, parse, rant, subtweet, retweet">
     <meta name="author" content="Erin Stewart">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" type="text/css" href="public/css/reset.css">
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://use.fontawesome.com/4c79e10eea.js"></script>
     <script type="text/javascript" src="public/javascript/app.js"></script>
     <script type="text/javascript" src="public/javascript/jquery.quickflip.source.js"></script>
 </head>
 
 <body>
-    <!-- This is the code for the flip to recognize that this flips -->
-    <div class="quickFlip">
-        <!-- first side of the card -->
-        <div id="centerStyle">
-            <form id="rantGet" autocomplete="false">
-                <fieldset>
-                    <legend>Paste Your Text Here:</legend>
-                    <hr>
-                    <textarea name="rant" rows="30" cols="30" id="rantRaw">Brace yourselves fam, this is a long one...</textarea>
-                </fieldset>
-                <!-- the class "first quickFlipCta" means that clicking on this will trigger the flip -->
-                <input class="first quickFlipCta" type="submit" value="Parse" id="rantSubmit">
-                <input type="reset">
-            </form>
+    <header>
+        <h1 class="siteName">Tweead</h1>
+        <p class="links"><i class="fa fa-sign-in" aria-hidden="true"></i><a href="https://tweead.herokuapp.com/login"> Log In</a> | <i class="fa fa-user-plus" aria-hidden="true"><a href="https://tweead.herokuapp.com/signup"></i> Sign Up</a>
+        </p>
+    </header>
+    <main>
+        <!-- This is the code for the flip to recognize that this flips -->
+        <div class="quickFlip">
+            <!-- Blank div for quickFlip -->
+            <div>
+                <!-- first side of the card -->
+                <div id="flipCard1">
+                    <form id="rantGet" autocomplete="false">
+                        <fieldset form="rantGet">
+                            <legend>Paste Your Text Below</legend>
+                            <hr>
+                            <textarea name="rant" rows="15" cols="60" id="rantRaw">Brace yourselves fam, this is a long one...</textarea>
+                            <br>
+                            <!-- the class "quickFlipCta" means that clicking on this will trigger the flip -->
+                            <input class="quickFlipCta" type="submit" value="Parse" id="rantSubmit">
+                            <input type="reset" id="rantReset">
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <!-- Blank div for quickFlip -->
+            <div>
+                <!-- second side of the card -->
+                <div id="flipCard2">
+                    <form id="rantSend" autocomplete="false">
+                        <fieldset form="rantSend">
+                            <legend>Here Are Your Tweets!</legend>
+                            <hr>
+                            <div id="parsedTweets"></div>
+                            <br>
+                            <!-- the class "quickFlipCta" means that clicking on this will trigger the flip -->
+                            <input class="quickFlipCta" type="button" value="Go Back" id="goBack">
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <!-- div that closes the flip area -->
         </div>
-        <!-- second side of the card -->
-        <div id="style2">
-            <h3>Copy Pasta</h3>
-            <div id="parsedTweets"></div>
-            <!-- the class "first quickFlipCta" means that clicking on this will trigger the flip -->
-            <input class="first quickFlipCta" type="button" value="Go Back" id="goBack">
-        </div>
-        <!-- div that closes the flip area -->
-    </div>
-    <footer><p>&copy; Erin Stewart</p></footer>
+    </main>
+    <footer>
+        <p class="copyright">&copy; 2017
+            <br>Erin Stewart</p>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
     <script type="text/javascript">
     $(function() {
 
-        $('.quickFlip').quickFlip();
+        $(".quickFlip").quickFlip();
 
         // GET RANT
 
